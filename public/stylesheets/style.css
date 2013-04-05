@@ -14,13 +14,13 @@ a {
 }
 
 #title_list {
-  background: #4B3C54;
   border-radius: 0px 0px 25px 25px;
   max-width: 500px;
   margin: 0 auto;
 }
 
 .title {
+  background: #4B3C54;
   padding: 10px;
   border-color: #904D99;
   border-style: solid;
