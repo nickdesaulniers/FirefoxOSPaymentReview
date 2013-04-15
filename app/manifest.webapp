@@ -1,7 +1,7 @@
 {
   "name": "pdf Store",
   "description": "Buy some pdf's yo!",
-  "launch_path": "/",
+  "launch_path": "/index.html",
   "developer": {
     "name": "Nick Desaulniers",
     "url": "nickdesaulniers.github.com"
@@ -9,6 +9,7 @@
   "icons": {
     "128": "/images/icon_128.png"
   },
+  "type": "privileged",
   "permissions": {
     "device-storage:sdcard": {
       "description": "Save pdf's to SD card and read them back",

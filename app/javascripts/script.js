@@ -20,14 +20,18 @@
     img.src = book.cover;
 
     document.getElementById('title_list').appendChild(div);
-    console.log(book);
   },
   buildBookList = function buildBookList (err, books) {
     if (err) return Util.logError(err);
     books.forEach(eachBook);
   },
   loaded = function loaded () {
-    Util.ajaxGetJSON('/titles', buildBookList);
+    Util.getRecord(function getReceiptCb (err, appRecord) {
+      if (err) return Util.logError(err);
+      if (appRecord === null) return console.log('no appRecord, script.js');
+      console.log(record);//
+      Util.ajaxPostJSON('/titles', appRecord, buildBookList);
+    });
   };
 
   window.addEventListener('DOMContentLoaded', loaded);
