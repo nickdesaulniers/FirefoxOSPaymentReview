@@ -9,14 +9,9 @@
   "icons": {
     "128": "/images/icon_128.png"
   },
-  "type": "privileged",
   "permissions": {
-    "device-storage:sdcard": {
-      "description": "Save pdf's to SD card and read them back",
-      "access": "readcreate"
-    },
-    "systemXHR": {
-      "description": "CORS without modifying server"
+    "storage": {
+      "description": "Use indexedDB"
     }
   },
   "installs_allowed_from": ["*"]

@@ -6,7 +6,7 @@ window.Util = {
       throw new Error('ajaxGet needs a callback function');
     }
 
-    xhr = new XMLHttpRequest({ mozSystem: true });
+    xhr = new XMLHttpRequest();
     xhr.open(method, path);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.setRequestHeader('Content-length', payload.length);
@@ -48,5 +48,8 @@ window.Util = {
     request.onsuccess = function getSelfOnSuccess () {
       cb(null, request.result);
     };
+  },
+  install: function install () {
+    navigator.mozApps.install(window.location + 'manifest.webapp');
   }
 };

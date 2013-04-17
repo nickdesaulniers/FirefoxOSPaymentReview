@@ -29,8 +29,17 @@
     Util.getRecord(function getReceiptCb (err, appRecord) {
       if (err) return Util.logError(err);
       //if (appRecord === null) return console.log('no appRecord, script.js');
-      if (!appRecord) appRecord = {};
-      Util.ajaxPostJSON('http://localhost:3000/titles', appRecord, buildBookList);
+      if (!appRecord) {
+        // dev
+        var install = document.createElement('button');
+        install.appendChild(document.createTextNode('install'));
+        install.onclick = function () {
+          navigator.mozApps.install(window.location + 'manifest.webapp');
+        };
+        document.body.insertBefore(install, document.body.firstChild);
+      }
+      console.log(location);
+      Util.ajaxPostJSON('/titles', appRecord, buildBookList);
     });
   };
 
