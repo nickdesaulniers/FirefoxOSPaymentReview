@@ -10,7 +10,6 @@ var Book = function Book (title, author, cover) {
       new Book("Commandments of a Mobile Web", me, "images/dinosaur.jpg")
     ],
     list = function list (req, res) {
-      console.log(req.body);
       res.send(titles);
     };
 

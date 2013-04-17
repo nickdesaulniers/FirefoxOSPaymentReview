@@ -28,9 +28,9 @@
   loaded = function loaded () {
     Util.getRecord(function getReceiptCb (err, appRecord) {
       if (err) return Util.logError(err);
-      if (appRecord === null) return console.log('no appRecord, script.js');
-      console.log(record);//
-      Util.ajaxPostJSON('/titles', appRecord, buildBookList);
+      //if (appRecord === null) return console.log('no appRecord, script.js');
+      if (!appRecord) appRecord = {};
+      Util.ajaxPostJSON('http://localhost:3000/titles', appRecord, buildBookList);
     });
   };
 

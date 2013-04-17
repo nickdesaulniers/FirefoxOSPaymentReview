@@ -4,7 +4,7 @@
   "launch_path": "/index.html",
   "developer": {
     "name": "Nick Desaulniers",
-    "url": "nickdesaulniers.github.com"
+    "url": "http://nickdesaulniers.github.io/"
   },
   "icons": {
     "128": "/images/icon_128.png"
@@ -14,6 +14,10 @@
     "device-storage:sdcard": {
       "description": "Save pdf's to SD card and read them back",
       "access": "readcreate"
+    },
+    "systemXHR": {
+      "description": "CORS without modifying server"
     }
-  }
+  },
+  "installs_allowed_from": ["*"]
 }

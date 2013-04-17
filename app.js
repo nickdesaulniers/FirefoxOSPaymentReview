@@ -18,12 +18,20 @@ app.configure('development', function () {
 });
 
 app.post('/titles', title.list);
-app.get('/manifest.webapp', function (req, res) {
+/*app.get('/manifest.webapp', function (req, res) {
   res.type('application/x-web-app-manifest+json');
   res.sendfile('app/manifest.webapp');
+});*/
+
+// install code
+app.get('/install.html', function (req, res) {
+  res.sendfile('app/install.html');
 });
 app.get('/package.manifest', function (req, res) {
-  res.sendfile('app/package.maifest');
+  res.sendfile('app/package.manifest');
+});
+app.get('/package.zip', function (req, res) {
+  res.sendfile('app/package.zip');
 });
 
 http.createServer(app).listen(app.get('port'), function () {

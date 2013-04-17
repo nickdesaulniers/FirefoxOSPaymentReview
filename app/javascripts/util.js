@@ -6,7 +6,7 @@ window.Util = {
       throw new Error('ajaxGet needs a callback function');
     }
 
-    xhr = new XMLHttpRequest();
+    xhr = new XMLHttpRequest({ mozSystem: true });
     xhr.open(method, path);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.setRequestHeader('Content-length', payload.length);
@@ -27,6 +27,7 @@ window.Util = {
       }
     };
     console.log(payload + '| payload');
+    console.log(path);
     xhr.send(JSON.stringify(payload));
   },
   ajaxGetJSON: function ajaxGetJSON (path, cb) {

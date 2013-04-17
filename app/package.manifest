@@ -1,5 +1,9 @@
 {
-  "name": "yo",
-  "package_path": "http://10.250.20.195/package.zip",
-  "version": "1.0"
+  "name": "pdf Store",
+  "package_path": "http://10.250.20.195:3000/package.zip",
+  "version": "1.0",
+  "developer": {
+    "name": "Nick Desaulniers",
+    "url": "http://nickdesaulniers.github.io/"
+  }
 }
