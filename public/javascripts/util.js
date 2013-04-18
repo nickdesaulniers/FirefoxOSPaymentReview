@@ -26,8 +26,6 @@ window.Util = {
         }
       }
     };
-    console.log(payload + '| payload');
-    console.log(path);
     xhr.send(JSON.stringify(payload));
   },
   ajaxGetJSON: function ajaxGetJSON (path, cb) {
@@ -48,8 +46,5 @@ window.Util = {
     request.onsuccess = function getSelfOnSuccess () {
       cb(null, request.result);
     };
-  },
-  install: function install () {
-    navigator.mozApps.install(window.location + 'manifest.webapp');
   }
 };
